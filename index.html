@@ -380,9 +380,9 @@ ol.how .role-tag { font-size: .85em; padding: 2px 8px; }
 <main>
   <div class="teambar" id="teambar">
     <span class="lbl">Vai hiện tại</span>
-    <span class="role-tag speaker">🎤 Người nói · <b data-role="speaker">C</b></span>
-    <span class="role-tag coach">🧭 Người kèm · <b data-role="coach">A</b></span>
-    <span class="role-tag checker">❓ Người kiểm tra · <b data-role="checker">B</b></span>
+    <span class="role-tag speaker">🎤 Speaker · <b data-role="speaker">C</b></span>
+    <span class="role-tag coach">🧭 Coach · <b data-role="coach">A</b></span>
+    <span class="role-tag checker">❓ Checker · <b data-role="checker">B</b></span>
     <button class="btn sm" type="button" data-rotate>⟳ <span class="long">Đổi vai</span><span class="short">Đổi vai</span></button>
   </div>
   <div id="sheets"></div>
@@ -1012,9 +1012,9 @@ function rotate() {
   const bar = $("#teambar"); bar.animate && bar.animate([{ background: "var(--gold-soft)" }, { background: "" }], { duration: 700 });
 }
 const R = {
-  speaker: () => `<span class="role-tag speaker">🎤 Người nói · <b data-role="speaker"></b></span>`,
-  coach: () => `<span class="role-tag coach">🧭 Người kèm · <b data-role="coach"></b></span>`,
-  checker: () => `<span class="role-tag checker">❓ Người kiểm tra · <b data-role="checker"></b></span>`
+  speaker: () => `<span class="role-tag speaker">🎤 Speaker · <b data-role="speaker"></b></span>`,
+  coach: () => `<span class="role-tag coach">🧭 Coach · <b data-role="coach"></b></span>`,
+  checker: () => `<span class="role-tag checker">❓ Checker · <b data-role="checker"></b></span>`
 };
 const rotateBtn = () => `<div class="btn-row"><button class="btn sm ghost" type="button" data-rotate>⟳ Rotate roles for the next task</button></div>`;
 
@@ -1051,7 +1051,7 @@ const STAGES = [
   { k: "per", name: "Cá nhân hoá", title: "Ai trong nhóm…?", min: 4, moves: ["pair", "coach", "up", "rot"],
     goal: "Hỏi tự nhiên và chuyển câu trả lời thành cụm từ.", done: "Hỏi tự nhiên đủ 5 gợi ý · báo cáo 1 lần trước lớp." },
   { k: "tra", name: "Chuyển giao", title: "Một vấn đề, ba mức", min: 5, moves: ["solo", "pair", "coach", "up", "rot"],
-    goal: "Dùng các cụm từ trong một tình huống mới.", done: "Người kiểm tra đếm được 3 cụm Tier 1 + 2 cụm Tier 2." },
+    goal: "Dùng các cụm từ trong một tình huống mới.", done: "Checker đếm được 3 cụm Tier 1 + 2 cụm Tier 2." },
   { k: "ret", name: "Tự nhớ lại", title: "Một mình, không ghi chú", min: 3, moves: ["ret"],
     goal: "Chứng minh BẠN tự dùng được các cụm từ, không cần ai giúp.", done: "Hoàn thành khung câu không nhìn ghi chú · đúng từ 8 câu trở lên trong thử thách 3 giây." }
 ];
@@ -1101,7 +1101,7 @@ function overviewSheet() {
       <div><b>① ASK · Hỏi</b>Hỏi về nghĩa.<br><i>“Do you mean you go to bed late or you fall asleep late?”</i></div>
       <div><b>② PROMPT · Gợi ý</b>Chỉ ra ngôn ngữ cần dùng.<br><i>“Can you use one expression from Tier 1?”</i></div>
       <div><b>③ MODEL · Làm mẫu</b>Chỉ khi bạn vẫn chưa làm được.<br><i>“I usually go to bed late.”</i></div>
-      <div><b>④ CHECK · Kiểm tra</b>Người nói nói lại cả câu.<br><i>“I usually go to bed late because I have a lot of homework.”</i></div>
+      <div><b>④ CHECK · Kiểm tra</b>Speaker nói lại cả câu.<br><i>“I usually go to bed late because I have a lot of homework.”</i></div>
     </div>
     <p style="margin:12px 0 4px">Tìm lỗi ở: <span class="chip">Nghĩa</span> <span class="chip">Ngữ pháp</span> <span class="chip">Kết hợp từ</span> <span class="chip">Phát âm</span> <span class="chip">Từ vựng hay hơn</span> <span class="chip">Độ trôi chảy</span></p>
     <p style="margin:0;font-size:.92em;color:var(--ink-2)">Tìm hai lỗi. Mỗi lượt chỉ sửa một lỗi.</p>
@@ -1121,7 +1121,7 @@ function overviewSheet() {
       <div class="lv l2"><span class="lvtag">●● Nâng cao<small>+ Tier 2</small></span><p>Because I have [[a hectic schedule]], I often [[stay up until midnight]], so I [[feel tired]] the next morning.</p></div>
       <div class="lv l3"><span class="lvtag">●●● Thử thách<small>Thẻ Thử thách: nguyên nhân–kết quả · đối lập · lời khuyên · diễn đạt lại</small></span><p>Because of my [[hectic schedule]], I sometimes end up [[burning the midnight oil]], which leaves me [[sleep-deprived]] the following morning.</p></div>
     </div>
-    <div class="golden" style="margin-top:16px">Người kèm <b>suy nghĩ</b> nhiều hơn, không phải nói nhiều hơn.<br>Người nói được <b>hỗ trợ</b> nhiều hơn, không phải nói ít đi.</div>
+    <div class="golden" style="margin-top:16px">Coach <b>suy nghĩ</b> nhiều hơn, không phải nói nhiều hơn.<br>Speaker được <b>hỗ trợ</b> nhiều hơn, không phải nói ít đi.</div>
   </section>
   </article>`;
 }
@@ -1183,7 +1183,7 @@ function groupSheet(g, gi) {
     </div>
 
     ${sub("1c", "Dạy lại cho nhau: nghĩa, CCQ, cấu trúc", 9)}
-    ${how([`${R.checker()} đọc một câu hỏi kiểm tra nghĩa (CCQ).`, `${R.speaker()} trả lời, không nhìn.`, `${R.coach()} bấm vào câu hỏi để xem đáp án.`, "Thẻ chunk: Người nói nói các cụm từ <b>trước khi</b> lật thẻ."])}
+    ${how([`${R.checker()} đọc một câu hỏi kiểm tra nghĩa (CCQ).`, `${R.speaker()} trả lời, không nhìn.`, `${R.coach()} bấm vào câu hỏi để xem đáp án.`, "Thẻ chunk: Speaker nói các cụm từ <b>trước khi</b> lật thẻ."])}
     <div class="grid3">${g.ccq.map(c => `<div class="mcard">
       <div class="mh">${c.head}</div>${c.ipa ? `<div class="ipa">${c.ipa}</div>` : ""}
       ${c.video ? video(c.video) : c.img ? `<img src="${IMG(c.img[0])}" alt="${esc(c.img[1])}" loading="lazy">` : ""}
@@ -1226,11 +1226,11 @@ function groupSheet(g, gi) {
   const coreUp = (u.r2.split("→")[1] || "").trim().replace(/^“|”$/g, "");
   const rounds = [
     ["speaker", "Trả lời", "Trả lời tự nhiên trong 20 giây. Chưa ai sửa.", ans1(u.r1)],
-    ["coach", "Nâng cấp", "Chọn MỘT cụm Tier 2 cho bạn. Người nói trả lời lại có dùng cụm đó.",
+    ["coach", "Nâng cấp", "Chọn MỘT cụm Tier 2 cho bạn. Speaker trả lời lại có dùng cụm đó.",
       `<div class="chips" data-pick-one>${u.pick.map(p => `<button class="chip" type="button">${p}</button>`).join("")}</div><p data-pick-out style="margin-top:8px;color:var(--ink-2)"></p>` + ans1(u.r2)],
-    ["checker", "Hỏi tiếp", "Hỏi MỘT câu hỏi tiếp nối thật. Người nói trả lời bằng câu đầy đủ.",
+    ["checker", "Hỏi tiếp", "Hỏi MỘT câu hỏi tiếp nối thật. Speaker trả lời bằng câu đầy đủ.",
       `<div class="qa">${u.follow.map(f => `<div><b>Q:</b> ${f}</div>`).join("")}</div><div class="ans3"><button class="ans-toggle" type="button">Câu trả lời gợi ý</button><div class="ans-body" hidden>${u.follow.map((f, i) => `<div class="lv l1"><p><b>${f}</b><br>${md(A.followA[i])}</p></div>`).join("")}</div></div>`],
-    ["coach", "Làm mẫu", "Người kèm trả lời cùng câu hỏi ở mức Thử thách. Cả nhóm nghe và tìm các cụm Tier 2.", ans1(u.r4)],
+    ["coach", "Làm mẫu", "Coach trả lời cùng câu hỏi ở mức Thử thách. Cả nhóm nghe và tìm các cụm Tier 2.", ans1(u.r4)],
     ["speaker", "Nói lại", "Nói lại bằng lời của mình. Giữ ít nhất 1 cụm mới. Không chép nguyên văn.", ans1(u.r5)]
   ];
   h += `<section class="block stage gui">${stageHead(2, P)}
@@ -1260,7 +1260,7 @@ function groupSheet(g, gi) {
   /* ===== Stage 5 · Transfer ===== */
   h += `<section class="block stage tra">${stageHead(4, P)}
     <p class="bigq">${g.transfer.scene}</p>
-    ${how([`${R.speaker()} đưa lời khuyên trong 45 giây: 3 cụm Tier 1 + 2 cụm Tier 2.`, `${R.checker()} bấm vào mọi cụm từ nghe được.`, `${R.coach()} gợi ý một điểm nâng cấp. Người nói thử lại.`, "Muốn khó hơn? Nhận Thẻ Thử thách."])}
+    ${how([`${R.speaker()} đưa lời khuyên trong 45 giây: 3 cụm Tier 1 + 2 cụm Tier 2.`, `${R.checker()} bấm vào mọi cụm từ nghe được.`, `${R.coach()} gợi ý một điểm nâng cấp. Speaker thử lại.`, "Muốn khó hơn? Nhận Thẻ Thử thách."])}
     <div class="grid2">
       <div>
         <div class="tier must" style="margin-bottom:8px"><h4>Tier 1 · bấm cụm nghe được</h4><div class="chips" data-count="must">${g.tiers.must.map(x => `<button class="chip" type="button">${x}</button>`).join("")}</div></div>
